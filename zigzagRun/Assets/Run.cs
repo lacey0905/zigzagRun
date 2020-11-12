@@ -25,7 +25,13 @@ public class Run : MonoBehaviour
 
     void FixedUpdate()
     {
-        groundCheck = GroundCheck(direction);
+        Vector3 origin = transform.position + transform.up * 0.5f;
+        Debug.DrawRay(origin + transform.forward * margin, -Vector3.up, Color.red);
+        Debug.DrawRay(origin + transform.right * margin, -Vector3.up, Color.red);
+        Debug.DrawRay(origin - transform.right * margin, -Vector3.up, Color.red);
+
+
+        //groundCheck = GroundCheck(direction);
     }
 
     public float margin = 0.5f;
